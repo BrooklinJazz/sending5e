@@ -1,7 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { IRootstate } from './store/store';
+import { IMessage } from './store/sending/reducer';
+import { connect } from 'react-redux';
 
-const App = () => {
-  return <div className="App">App</div>;
+interface IStateProps {
+  messages: IMessage[]
+}
+
+
+const mapStateToProps = (state: IRootstate): IStateProps => {
+  return {
+    messages: state.sending.messages
+  }
+}
+
+const App = ({messages}: IStateProps) => {
+  return (
+    <div onClick={() => console.log(messages)} className="App">Click me to log messages</div>
+  );
 };
 
-export default App;
+export default connect(mapStateToProps, null)(App);
