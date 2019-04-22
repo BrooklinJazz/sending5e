@@ -1,6 +1,6 @@
 import React from 'react';
-import { IRootstate } from './store/store';
-import { IMessage } from './store/sending/reducer';
+import { IRootstate } from '../../store/store';
+import { IMessage } from '../../store/sending/reducer';
 import { connect } from 'react-redux';
 
 interface IStateProps {
