@@ -8,11 +8,9 @@ interface IStateProps {
 }
 
 
-const mapStateToProps = (state: IRootstate): IStateProps => {
-  return {
+const mapStateToProps = (state: IRootstate): IStateProps => ({
     messages: state.sending.messages
-  }
-}
+})
 
 const App = ({messages}: IStateProps) => {
   return (
