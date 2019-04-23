@@ -18,6 +18,7 @@
         "prefer-const": true,
         "no-angle-bracket-type-assertion": false,
         "no-console": false,
+        "semicolon": true,
     },
     "rulesDirectory": []
 }

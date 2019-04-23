@@ -14,7 +14,7 @@ const mapStateToProps = (state: IRootstate): IStateProps => ({
 
 const App = ({messages}: IStateProps) => {
   return (
-    <div onClick={() => console.log(messages)} className="App">Click me to log messages</div>
+    <div data-testid="App" onClick={() => console.log(messages)}  className="App">Click me to log messages</div>
   );
 };
 
