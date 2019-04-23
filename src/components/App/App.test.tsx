@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  render,
-  cleanup,
-} from 'react-testing-library';
+import { render, cleanup, fireEvent, waitForElement } from 'react-testing-library';
 import { Provider } from 'react-redux';
-// import 'jest-dom/extend-expect';
 import App from './index';
 import { store } from '../../store/store';
 
@@ -17,6 +13,19 @@ describe('App Component', () => {
         <App />
       </Provider>
     );
-    getByTestId("App")
+    getByTestId('App');
+  });
+});
+
+describe('Send Message Button', () => {
+  it('Should add a message when clicked', async () => {
+    const { getByTestId } = render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+
+    fireEvent.click(getByTestId('SendMessageButton'));
+    waitForElement(() => getByTestId("Message0"))
   });
 });
