@@ -13,18 +13,9 @@ jobs:
       - image: "circleci/node:9.6.1"
     steps:
       - checkout
-      - run:
-        name: Install Node Modules
-        command: npm install
-      - run:
-        name: Run Test Files
-        command: npm test
-      - run:
-        name: Start Server
-        command: npm start
-      - run:
-        name: Run Cypress
-        command: cypress run
+      - run: npm install
+      - run: npm test
+
   # test:
   #   steps:
   #     - run:
@@ -37,5 +28,4 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - build
-      - cypress/install
       - cypress/run
