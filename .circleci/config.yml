@@ -8,15 +8,13 @@ orbs:
   cypress: cypress-io/cypress@1.6.0
 
 jobs:
-  build:
+  test:
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: "circleci/node:9.6.1"
     steps:
       - checkout
       - run: npm install
       - run: npm test
-      - run: npm run CI
-      - run: npm run cypress
   # test:
   #   steps:
   #     - run:
@@ -28,4 +26,5 @@ workflows:
   Welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - build
+      - test
+      - cypress/run
