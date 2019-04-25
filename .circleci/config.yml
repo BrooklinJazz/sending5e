@@ -19,9 +19,12 @@ jobs:
       - run:
         name: Run Test Files
         command: npm test
-      # - run:
-      #   name: Start Server
-      #   command: npm start
+      - run:
+        name: Start Server
+        command: npm start
+      - run:
+        name: Run Cypress
+        command: cypress run
   # test:
   #   steps:
   #     - run:
@@ -35,13 +38,4 @@ workflows:
     jobs:
       - build
       - cypress/install
-        requires:
-          - build
-        build: 'npm run build'
       - cypress/run
-        requires: 
-          - cypress/install
-          - build
-        start: 'npm start'
-
-
