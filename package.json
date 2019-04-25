@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress": "npx cypress open",
-    "CI": "npm start & wait-on http://localhost:3000 & cypress run"
+    "CI": "npm start & wait-on http://localhost:3000"
   },
   "eslintConfig": {
     "extends": "react-app"
