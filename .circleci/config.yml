@@ -36,7 +36,7 @@ workflows:
       - build
       - cypress/install
         requires:
-        - build
+          - build
         build: 'npm run build'
       - cypress/run
         requires: 
