@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
-      - run: npm start
+      - run: npm start & wait-on http://localhost:3000
       - cypress/run
   # test:
   #   steps:
