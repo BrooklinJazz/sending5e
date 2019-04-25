@@ -7,14 +7,18 @@ orbs:
   welcome: circleci/welcome-orb@0.3.1
   cypress: cypress-io/cypress@1.6.0
 
+jobs:
+  test:
+    steps:
+      - run:
+          name: Test
+          command: npm test
 # Orchestrate or schedule a set of jobs, see https://circleci.com/docs/2.0/workflows/
 workflows:
   # Name the workflow "Welcome"
   Welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - cypress/run
       - welcome/run
-      tests:
-        steps:
-          - npm run test
+      - cypress/run
+      - test
