@@ -15,5 +15,6 @@ workflows:
     jobs:
       - cypress/run
       - welcome/run
-      - run:
-        - npm test
+      tests:
+        steps:
+          - npm run test
