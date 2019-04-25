@@ -6,6 +6,8 @@ orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.3.1
   cypress: cypress-io/cypress@1.6.0
+  - run:
+    - npm test
 
 # Orchestrate or schedule a set of jobs, see https://circleci.com/docs/2.0/workflows/
 workflows:
