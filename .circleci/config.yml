@@ -12,7 +12,7 @@ jobs:
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: circleci/node:4.8.2
     steps:
-    - run: npm test
+    - run: npm run test
   # test:
   #   steps:
   #     - run:
