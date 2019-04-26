@@ -22,8 +22,7 @@ jobs:
       - checkout
       - run: npm install --save wait-on
       - run: npm install
-      - run: npm start && wait-on http://localhost:3000
-      - run: DEBUG=cypress* cypress run
+      - run: npm start && wait-on http://localhost:3000 && DEBUG=cypress* cypress run
 
 workflows:
   # Name the workflow "Welcome"
