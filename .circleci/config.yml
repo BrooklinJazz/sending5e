@@ -34,7 +34,7 @@ workflows:
   Welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - build
+      - build:
       - start:
         requires:
           - build
