@@ -9,3 +9,6 @@ a web application which servers to improve the experience for DMs and Players wh
 - Redux Saga
 - Typescript
 - Material UI
+- Cypress
+- react-testing-library
+- CircleCI
