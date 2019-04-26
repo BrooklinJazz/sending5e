@@ -20,8 +20,9 @@ jobs:
       - image: 'circleci/node:9.6.1'
     steps:
       - checkout
+      - run: npm install --save wait-on
       - run: npm install
-      - run: npm start
+      - run: npm start && wait-on http://localhost:3000
 
 workflows:
   # Name the workflow "Welcome"
