@@ -20,8 +20,8 @@ jobs:
       - image: 'circleci/node:9.6.1'
     steps:
       - checkout
-      - run: npm install
       - run: npm install cypress --save
+      - run: npm install
       - run: npm run CI && npm run cypress
 
 workflows:
