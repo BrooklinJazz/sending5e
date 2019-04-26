@@ -35,7 +35,7 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - start
-      - cypress/run
+      - cypress/run:
         requires:
           - start
       # - build
