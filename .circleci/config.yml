@@ -21,7 +21,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm start && DEBUG=cypress* cypress run
+      - run: npm run CI && npm run cypress
 
 workflows:
   # Name the workflow "Welcome"
