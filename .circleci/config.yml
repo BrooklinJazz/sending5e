@@ -10,14 +10,14 @@ orbs:
 jobs:
   build:
     docker: # use the docker executor type; machine and macos executors are also supported
-      - image: "circleci/node:9.6.1"
+      - image: 'circleci/node:9.6.1'
     steps:
       - checkout
       - run: npm install
       - run: npm test
   start:
     docker: # use the docker executor type; machine and macos executors are also supported
-      - image: "circleci/node:9.6.1"
+      - image: 'circleci/node:9.6.1'
     steps:
       - checkout
       - run: npm install
@@ -30,7 +30,6 @@ workflows:
     jobs:
       - start
       - build
-      # - cypress/run:
-      #   requires:
-      #     - start
-      # - build
+      - cypress/run:
+          requires:
+            - start
