@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/redux-logger": "^3.0.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
     "typescript": "3.4.3",
     "wait-on": "^3.2.0"
   },
