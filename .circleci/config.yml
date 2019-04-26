@@ -30,6 +30,6 @@ workflows:
     jobs:
       - start
       - build
-      # - cypress/run:
-      #     requires:
-      #       - start
+      - cypress/run:
+          requires:
+            - start
