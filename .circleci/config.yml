@@ -13,15 +13,15 @@ jobs:
       - image: 'circleci/node:9.6.1'
     steps:
       - checkout
-      - run: yarn install
-      - run: yarn test
+      - run: npm install
+      - run: npm test
   start-server-for-cypress:
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: 'circleci/node:9.6.1'
     steps:
       - checkout
-      - run: yarn install
-      - run: yarn run CI
+      - run: npm install
+      - run: npm run CI
 
 workflows:
   # Name the workflow "Welcome"
@@ -30,8 +30,8 @@ workflows:
     jobs:
       - build-and-test
       - cypress/install:
-          build: 'yarn run build'  # run a custom app build step
+          build: 'npm run build'  # run a custom app build step
       - cypress/run:
           requires:
             - cypress/install
-          start: 'yarn start'
+          start: 'npm start'
