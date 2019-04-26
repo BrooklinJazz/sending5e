@@ -20,14 +20,18 @@ jobs:
       - image: 'circleci/node:9.6.1'
     steps:
       - checkout
-      - run: npm install cypress --save
       - run: npm install
-      - run: npm run CI && npm run cypress
+      - run: npm run CI
 
 workflows:
   # Name the workflow "Welcome"
   Welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - start-server-for-cypress
       - build-and-test
+      - cypress/install:
+          build: 'npm run build'  # run a custom app build step
+      - cypress/run:
+          requires:
+            - cypress/install
+          start: 'npm start' 
