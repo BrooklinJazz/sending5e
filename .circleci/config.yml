@@ -14,13 +14,17 @@ jobs:
     steps:
       - checkout
       - run: npm install
+  test:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: "circleci/node:9.6.1"
+    steps:
+      - checkout
       - run: npm test
   start:
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: "circleci/node:9.6.1"
     steps:
       - checkout
-      - run: npm install
       - run: npm start
 
 workflows:
@@ -28,8 +32,13 @@ workflows:
   Welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - start
-      # - cypress/run:
-      #   requires:
-      #     - start
-      # - build
+    - build
+    - test:
+      requires:
+        - build
+    - start:
+      requires:
+        - test
+    - cypress/run:
+      requires:
+        - start
