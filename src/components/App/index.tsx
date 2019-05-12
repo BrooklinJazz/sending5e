@@ -4,13 +4,13 @@ import socketIOClient from "socket.io-client";
 const App = () => {
 
   useEffect(() => {
-    const socket = socketIOClient.connect("http://localhost:4000");
+    const socket = socketIOClient.connect("http://localhost:4000/messages");
     socket.on("player message", function(data: { message: string }) {
       console.log("recieved message:", data.message);
     });
   }, []);
   const sendMessage = () => {
-    const socket = socketIOClient.connect("http://localhost:4000");
+    const socket = socketIOClient.connect("http://localhost:4000/messages");
     socket.emit('dm message', { message: 'an example dm message' });
   };
   return (
