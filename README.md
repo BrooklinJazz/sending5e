@@ -5,11 +5,8 @@ a web application which servers to improve the experience for DMs and Players wh
 
 ## Tech Stack
 - React
-- Redux
-- Redux Saga
 - Typescript
 - Material UI
 - Cypress
 - react-testing-library
 - CircleCI
-- redux-logger
